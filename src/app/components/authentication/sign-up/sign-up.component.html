@@ -1,0 +1,74 @@
+
+    <form
+      [formGroup]="userAccountForm"
+      (ngSubmit)="onCreateAccount()"
+      class="step-container"
+    >
+      <p class="lorem">Create a new account</p>
+      <div class="input-group">
+        <input
+          nbInput
+          type="text"
+          fullWidth
+          fieldSize="medium"
+          placeholder="Enter your first name"
+          class="form-control"
+          formControlName="firstname"
+          [ngClass]="{
+            'form-control-danger':
+              userAccountForm.invalid &&
+              (userAccountForm.dirty || userAccountForm.touched)
+          }"
+        />
+      </div>
+      <div class="input-group">
+        <input
+          nbInput
+          type="text"
+          fullWidth
+          fieldSize="medium"
+          placeholder="Enter your last name"
+          class="form-control"
+          formControlName="lastname"
+          [ngClass]="{
+            'form-control-danger':
+              userAccountForm.invalid &&
+              (userAccountForm.dirty || userAccountForm.touched)
+          }"
+        />
+      </div>
+      <div class="input-group">
+        <input
+          nbInput
+          fullWidth
+          fieldSize="medium"
+          type="email"
+          placeholder="Enter your email"
+          class="form-control"
+          formControlName="email"
+          [ngClass]="{
+            'form-control-danger':
+              userAccountForm.invalid &&
+              (userAccountForm.dirty || userAccountForm.touched)
+          }"
+        />
+      </div>
+      <div class="input-group">
+        <input
+          nbInput
+          fullWidth
+          fieldSize="medium"
+          type="password"
+          placeholder="Enter your password"
+          class="form-control"
+          formControlName="password"
+          [ngClass]="{
+            'form-control-danger':
+              userAccountForm.invalid &&
+              (userAccountForm.dirty || userAccountForm.touched)
+          }"
+        />
+      </div>
+      <button hero status="primary" type="submit" nbButton>Register</button>
+    </form>
+ 

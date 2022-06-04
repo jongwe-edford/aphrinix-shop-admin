@@ -5,7 +5,7 @@ import {
   NbSearchService,
   NbSidebarService,
 } from '@nebular/theme';
-import { ShopStorageService } from 'src/app/@core/services/shop/shop-storage.service';
+import { ShopStorageService } from 'src/app/core/services/shop/shop-storage.service';
 import { CreateShopComponent } from '../shop/create-shop/create-shop.component';
 
 @Component({

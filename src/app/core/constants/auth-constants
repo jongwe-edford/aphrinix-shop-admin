@@ -1,0 +1,6 @@
+import * as uuid from "uuid";
+
+export default class AuthConstants {
+  public static accessToken = uuid.v4();
+  public static refreshToken = uuid.v4();
+}

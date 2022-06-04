@@ -11,7 +11,7 @@ import { NbAuthModule } from '@nebular/auth';
 import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthInterceptor } from './@core/interceptors/auth.interceptor';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
