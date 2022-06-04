@@ -1,1 +1,28 @@
+@use "themes" as *;
+
+@use "@nebular/theme/styles/globals" as *;
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
 /* You can add global styles to this file, and also import other style files */
+@import "~angular-notifier/styles/core.css";
+@import "~angular-notifier/styles/themes/theme-material.css";
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.input-group {
+  margin: 16px 0;
+}

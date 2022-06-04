@@ -1,0 +1,32 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <div class="header">
+      <div class="left">
+        <div class="logo">
+          <a href="">
+            <span>Aphrinix</span>
+          </a>
+        </div>
+        <button nbButton status="success" size="medium" (click)="toggle()">
+          <nb-icon icon="menu-2-outline"></nb-icon>
+        </button>
+        <nb-search type="rotate-layout"></nb-search>
+      </div>
+      <div class="right"></div>
+    </div>
+  </nb-layout-header>
+  <nb-sidebar fixed *ngIf="shopStorageService.isShopCreated()">
+    <nb-sidebar-header> <h3>Shop name</h3> </nb-sidebar-header>
+    <nb-menu [items]="items" autoCollapse="true"> </nb-menu>
+    <nb-sidebar-footer> &copy;Aphrinix 2022 </nb-sidebar-footer>
+  </nb-sidebar>
+
+  <nb-layout-column contenteditable class="colored-column-info">
+    <div class="no-shop">
+      <h4>No shop created! Create a shop and start selling for free</h4>
+      <button nbButton status="info" (click)="openShopCreationDialog()">
+        Get started now
+      </button>
+    </div>
+  </nb-layout-column>
+</nb-layout>
