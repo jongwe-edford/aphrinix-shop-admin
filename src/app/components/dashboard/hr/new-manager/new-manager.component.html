@@ -1,0 +1,33 @@
+<nb-card>
+  <nb-card-header>
+    <h3>Add new shop manager</h3>
+  </nb-card-header>
+  <nb-card-body>
+    <form
+      class="new-manager-form"
+      [formGroup]="newAdminForm"
+      (ngSubmit)="sendLink()"
+    >
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          class="form-control"
+          id="email"
+          type="text"
+          formControlName="email"
+          nbInput
+          placeholder="Shop manager email"
+          aria-label=""
+        />
+      </div>
+      <div class="actions">
+        <button nbButton shape="semi-round" status="danger" (click)="close()">
+          Cancel
+        </button>
+        <button nbButton shape="semi-round" type="submit" status="success">
+          Save
+        </button>
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

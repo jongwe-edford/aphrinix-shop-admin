@@ -9,6 +9,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~angular-notifier/styles/core.css";
 @import "~angular-notifier/styles/themes/theme-material.css";
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
 
 *,
 *::before,

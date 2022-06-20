@@ -4,6 +4,7 @@ import {
   NbBadgeModule,
   NbButtonModule,
   NbCardModule,
+  NbContextMenuModule,
   NbDialogModule,
   NbFormFieldModule,
   NbIconModule,
@@ -11,13 +12,19 @@ import {
   NbLayoutModule,
   NbMenuModule,
   NbSearchModule,
+  NbSelectModule,
   NbSidebarModule,
   NbStepperModule,
+  NbTagModule,
+  NbTimepickerModule,
+  NbUserModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { NotifierModule } from 'angular-notifier';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [],
@@ -49,6 +56,13 @@ import { NotifierModule } from 'angular-notifier';
     NbCardModule,
     NbMenuModule.forRoot(),
     NbDialogModule.forRoot(),
+    NbUserModule,
+    NbContextMenuModule,
+    NbTimepickerModule.forRoot(),
+    NgxSpinnerModule,
+    NbSelectModule,
+    NbTagModule,
+    AngularEditorModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -66,6 +80,13 @@ import { NotifierModule } from 'angular-notifier';
     NbSearchModule,
     NbMenuModule,
     NbBadgeModule,
+    NbUserModule,
+    NbTimepickerModule,
+    NbContextMenuModule,
+    NgxSpinnerModule,
+    NbSelectModule,
+    NbTagModule,
+    AngularEditorModule,
   ],
 })
 export class SharedModule {}

@@ -1,24 +1,26 @@
 <div class="container">
-  <form action="index.html" method="post">
+  <form [formGroup]="userAccountForm" (ngSubmit)="onCreateAccount()">
     <h1>Sign in</h1>
     <div class="form-content">
       <input
         id="user-name"
         name="user-name"
         placeholder="email"
+        formControlName="email"
         type="text"
       /><input
         id="password"
         name="password"
+        formControlName="password"
         placeholder="password"
         type="password"
       /><br />
-      <div class="button">Log in</div>
+      <button type="submit" class="button">Log in</button>
       <br />
       <div class="signup-message">
         <a href="#">Forgot your password?</a>
       </div>
-      <a class="signup-message" routerLink="auth/sign-up">
+      <a class="signup-message" routerLink="/sign-up">
         <a href="#">New here? <span>create account</span></a>
       </a>
     </div>

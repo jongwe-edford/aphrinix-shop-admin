@@ -1,32 +1,55 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
 <nb-layout>
   <nb-layout-header fixed>
-    <div class="header">
+    <div
+      class="header w-full"
+      style="box-shadow: 0 0 0 white; left: 0; right: 0"
+    >
       <div class="left">
         <div class="logo">
-          <a href="">
+          <a href="" class="desktop">
             <span>Aphrinix</span>
           </a>
+          <a href="" class="mobile">
+            <span>A</span>
+          </a>
         </div>
-        <button nbButton status="success" size="medium" (click)="toggle()">
-          <nb-icon icon="menu-2-outline"></nb-icon>
+
+        <button nbButton shape="semi-round" status="success" (click)="toggle()">
+          <nb-icon icon="menu"></nb-icon>
         </button>
-        <nb-search type="rotate-layout"></nb-search>
+
+        <nb-search style="margin-left: 4px" type="rotate-layout"></nb-search>
       </div>
-      <div class="right"></div>
+      <div class="right">
+        <div class="profile" style="display: flex; align-items: center">
+          <nb-user
+            name="{{ user.firstname }} {{ user.lastname }}"
+            title="{{ user.email }}"
+            [nbContextMenu]="contextMenuItems"
+            picture="{{ user.photoUrl == '' ? '' : user.photoUrl }}"
+            nbContextMenuTag="my-context-menu"
+          >
+          </nb-user>
+        </div>
+      </div>
     </div>
   </nb-layout-header>
-  <nb-sidebar fixed *ngIf="shopStorageService.isShopCreated()">
-    <nb-sidebar-header> <h3>Shop name</h3> </nb-sidebar-header>
+  <nb-sidebar fixed responsive="true" state="collapsed">
     <nb-menu [items]="items" autoCollapse="true"> </nb-menu>
     <nb-sidebar-footer> &copy;Aphrinix 2022 </nb-sidebar-footer>
   </nb-sidebar>
 
-  <nb-layout-column contenteditable class="colored-column-info">
-    <div class="no-shop">
-      <h4>No shop created! Create a shop and start selling for free</h4>
-      <button nbButton status="info" (click)="openShopCreationDialog()">
-        Get started now
-      </button>
+  <nb-layout-column contenteditable>
+    <div class="red">
+      <router-outlet></router-outlet>
     </div>
   </nb-layout-column>
 </nb-layout>

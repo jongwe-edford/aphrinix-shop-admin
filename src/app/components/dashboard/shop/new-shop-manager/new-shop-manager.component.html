@@ -1,0 +1,63 @@
+<nb-layout>
+  <nb-layout-column
+    ><div style="margin: 0 auto; width: 100%">
+      <div class="header">
+        <h3>Welcome {{ email }}</h3>
+        <p>Please complete the registration below to become a shop manager</p>
+      </div>
+      <form
+        class="new-manager-form"
+        [formGroup]="shopManagerRegistrationForm"
+        (ngSubmit)="register()"
+      >
+        <div class="mb-3">
+          <label for="firstname" class="label">First name</label>
+          <input
+            id="firstname"
+            type="text"
+            fullWidth
+            formControlName="firstname"
+            nbInput
+            placeholder="First name"
+            aria-label=""
+          />
+        </div>
+        <div class="mb-3">
+          <label for="lastname" class="label">Last name</label>
+          <input
+            id="lastname"
+            type="text"
+            nbInput
+            formControlName="lastname"
+            fullWidth
+            placeholder="Last name"
+            aria-label=""
+          />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="label">Password</label>
+          <input
+            id="password"
+            type="password"
+            fullWidth
+            nbInput
+            formControlName="password"
+            placeholder="Password"
+            aria-label=""
+          />
+        </div>
+        <div class="actions">
+          <button
+            nbButton
+            fullWidth=""
+            shape="semi-round"
+            type="submit"
+            status="success"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </nb-layout-column>
+</nb-layout>

@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: whitesmoke;
+    opacity: 0.75;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    button {
+      &:not(:nth-child(2)) {
+        margin-right: 18px;
+      }
+      span {
+        color: black;
+        @media screen and (max-width=900px) {
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

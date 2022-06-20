@@ -98,6 +98,8 @@ export class SignUpComponent implements OnInit {
           );
         },
         (error) => {
+          console.log(error);
+
           const err = JSON.parse(error.error);
           console.log(err);
           this.notifier.error('error', err.message + '! You may login');

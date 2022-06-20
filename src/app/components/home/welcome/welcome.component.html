@@ -1,14 +1,19 @@
-<nav>
-  <div class="logo">
-    <a href="">
-      <span>Aphrinix</span>
-    </a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="" routerLink="about">About</a></li>
-    <li><a href="" routerLink="faq">FAQ</a></li>
-    <li><a href="" routerLink="learn">Learn</a></li>
-    <li><a href="" routerLink="/auth">Login</a></li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
+<nb-layout>
+  <nb-layout-header>
+    <nav style="width: 100vw">
+      <div class="logo">
+        <a href="">
+          <span>Aphrinix</span>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="" routerLink="about">About</a></li>
+        <li><a href="" routerLink="faq">FAQ</a></li>
+        <li><a href="" routerLink="learn">Learn</a></li>
+        <li><a href="" routerLink="/auth">Login</a></li>
+      </ul>
+    </nav>
+  </nb-layout-header>
+  <nb-layout-column><router-outlet></router-outlet></nb-layout-column>
+  <nb-layout-footer>footer</nb-layout-footer>
+</nb-layout>

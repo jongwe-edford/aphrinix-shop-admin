@@ -1,65 +1,229 @@
-<nb-stepper #stepper [linear]="linearMode">
-  <nb-step [stepControl]="nameForm" label="Name">
-    <form #nameForm="ngForm" class="step-container">
-      <div class="input-group">
-        <input
-          type="text"
-          placeholder="Enter your name"
-          class="form-control"
-          name="name"
-          required
-          nbInput
-          ngModel
-          #name="ngModel"
-          [status]="name.invalid ? 'danger' : 'basic'"
-        />
-      </div>
-      <button nbButton nbStepperNext>next</button>
-    </form>
-  </nb-step>
+<nb-card size="large">
+  <nb-card-body>
+    <nb-stepper
+      orientation="vertical"
+      (stepChange)="handleStepChange($event)"
+      [selectedIndex]="selectedActivityIndex"
+    >
+      <nb-step label="Name" [stepControl]="shopNameForm">
+        <div class="login-box">
+          <h4 class="text-lg text-green-700 mb-10">
+            What is your shop going to be called?
+          </h4>
+          <form [formGroup]="shopNameForm" (ngSubmit)="submitShopName()">
+            <div class="user-box">
+              <input
+                type="text"
+                name="name"
+                placeholder="Shop name"
+                required=""
+                formControlName="name"
+              />
+              <label>Shop name</label>
+            </div>
+            <div class="user-box">
+              <input
+                type="text"
+                name="phoneNumber"
+                placeholder="Phone number"
+                required=""
+                formControlName="phoneNumber"
+              />
+              <label>Phone number</label>
+            </div>
+            <button
+              nbButton
+              hero
+              type="submit"
+              status="info"
+              fullWidth
+              style="width: 60%; margin: 30px auto 0"
+            >
+              Next
+            </button>
+          </form>
+        </div>
+      </nb-step>
+      <nb-step label="Products" [stepControl]="shopNumberOfProducts">
+        <div class="section over-hide z-bigger">
+          <div class="section over-hide z-bigger">
+            <div class="container pb-5">
+              <div class="row justify-content-center pb-5">
+                <div class="col-12 pt-5">
+                  <p class="mb-4 pb-2">
+                    How many products do you want to sell?
+                  </p>
+                </div>
+                <form
+                  [formGroup]="shopNumberOfProducts"
+                  (ngSubmit)="submitProductTotals()"
+                >
+                  <div class="col-12 pb-5 d-flex justify-center">
+                    <div class="option">
+                      <input
+                        class="checkbox-tools"
+                        type="radio"
+                        name="productNumber"
+                        value="20"
+                        id="option-1"
+                        formControlName="productNumber"
+                        checked
+                      />
+                      <label class="for-checkbox-tools" for="option-1">
+                        <i class="uil uil-line-alt"></i>
+                        Less than 20
+                      </label>
+                    </div>
+                    <div class="option">
+                      <input
+                        class="checkbox-tools"
+                        type="radio"
+                        name="productNumber"
+                        formControlName="productNumber"
+                        value="50"
+                        id="option-2"
+                        checked
+                      />
+                      <label class="for-checkbox-tools" for="option-2">
+                        <i class="uil uil-line-alt"></i>
+                        Less than 50
+                      </label>
+                    </div>
+                    <div class="option">
+                      <input
+                        class="checkbox-tools"
+                        type="radio"
+                        formControlName="productNumber"
+                        name="productNumber"
+                        id="option-3"
+                        value="100"
+                        checked
+                      />
+                      <label class="for-checkbox-tools" for="option-3">
+                        <i class="uil uil-line-alt"></i>
+                        More than 50
+                      </label>
+                    </div>
+                  </div>
+                  <button nbButton status="success" fullWidth>Next</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nb-step>
+      <nb-step label="Managers" [stepControl]="nummberOfManagersForm">
+        <div class="section over-hide z-bigger">
+          <div class="section over-hide z-bigger">
+            <div class="container pb-5">
+              <div class="row justify-content-center pb-5">
+                <div class="col-12 pt-5">
+                  <p class="mb-4 pb-2">
+                    How many products do you want to sell?
+                  </p>
+                </div>
+                <form
+                  [formGroup]="nummberOfManagersForm"
+                  (ngSubmit)="submitShopManagers()"
+                >
+                  <div class="col-12 pb-5 d-flex justify-center">
+                    <div class="option">
+                      <input
+                        class="checkbox-tools"
+                        type="radio"
+                        name="managers"
+                        value="0"
+                        id="option-1"
+                        formControlName="managers"
+                        checked
+                      />
+                      <label class="for-checkbox-tools" for="option-1">
+                        <i class="uil uil-line-alt"></i>
+                        Just me
+                      </label>
+                    </div>
+                    <div class="option">
+                      <input
+                        class="checkbox-tools"
+                        type="radio"
+                        name="managers"
+                        formControlName="managers"
+                        value="50"
+                        id="option-2"
+                        checked
+                      />
+                      <label class="for-checkbox-tools" for="option-2">
+                        <i class="uil uil-line-alt"></i>
+                        Two
+                      </label>
+                    </div>
+                    <div class="option">
+                      <input
+                        class="checkbox-tools"
+                        type="radio"
+                        formControlName="managers"
+                        name="managers"
+                        id="option-3"
+                        value="100"
+                        checked
+                      />
+                      <label class="for-checkbox-tools" for="option-3">
+                        <i class="uil uil-line-alt"></i>
+                        More than 2
+                      </label>
+                    </div>
+                  </div>
+                  <button nbButton status="success" fullWidth>Next</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nb-step>
 
-  <nb-step [stepControl]="movieForm" label="Movie">
-    <form #movieForm="ngForm" class="step-container">
-      <div class="input-group">
-        <input
-          type="text"
-          placeholder="Enter your favorite movie"
-          class="form-control"
-          name="movie"
-          required
-          nbInput
-          ngModel
-          #movie="ngModel"
-          [status]="movie.invalid ? 'danger' : 'basic'"
-        />
-      </div>
-      <button nbButton nbStepperNext>next</button>
-    </form>
-  </nb-step>
-
-  <nb-step [stepControl]="somethingForm" label="Something">
-    <form #somethingForm="ngForm" class="step-container">
-      <div class="input-group">
-        <input
-          type="text"
-          placeholder="Enter something"
-          class="form-control"
-          name="something"
-          required
-          nbInput
-          ngModel
-          #somethingInput="ngModel"
-          [status]="somethingInput.invalid ? 'danger' : 'basic'"
-        />
-      </div>
-      <button nbButton nbStepperNext>next</button>
-    </form>
-  </nb-step>
-
-  <nb-step [hidden]="true">
-    <div class="step-container">
-      <h3>Wizard completed!</h3>
-      <button nbButton (click)="stepper.reset()">Try again</button>
-    </div>
-  </nb-step>
-</nb-stepper>
+      <nb-step label="Times" [stepControl]="shopTimeForm">
+        <div class="section over-hide z-bigger">
+          <div class="section over-hide z-bigger">
+            <div class="container pb-5">
+              <div class="row justify-content-center pb-5">
+                <div class="col-12 pt-5">
+                  <p class="mb-4 pb-2">What do you intend on selling?</p>
+                </div>
+                <form
+                  [formGroup]="shopTimeForm"
+                  (ngSubmit)="submitShopTimesForm()"
+                >
+                  <nb-card size="large">
+                    <nb-card-body>
+                      <div>
+                        <input
+                          nbInput
+                          placeholder="Opening time"
+                          type="text"
+                          formControlName="openingTme"
+                          [nbTimepicker]="timepicker"
+                        />
+                        <nb-timepicker #timepicker></nb-timepicker>
+                      </div>
+                      <div>
+                        <input
+                          nbInput
+                          placeholder="Closing time"
+                          type="text"
+                          formControlName="closingTime"
+                          [nbTimepicker]="timepicker2"
+                        />
+                        <nb-timepicker #timepicker2></nb-timepicker>
+                      </div>
+                    </nb-card-body>
+                  </nb-card>
+                  <button nbButton status="success" fullWidth>Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nb-step>
+    </nb-stepper>
+  </nb-card-body>
+</nb-card>

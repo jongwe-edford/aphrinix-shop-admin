@@ -6,13 +6,16 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule, NbMenuModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { HomeModule } from './modules/home/home.module';
+
 import { NbAuthModule } from '@nebular/auth';
-import { AuthenticationModule } from './modules/authentication/authentication.module';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { AuthenticationModule } from './modules/authentication/authentication.module';
+import { HomeModule } from './modules/home/home.module';
+import { ShopModule } from './modules/shop/shop.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,6 +32,8 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
     AuthenticationModule,
     NbMenuModule.forRoot(),
     DashboardModule,
+    ShopModule,
+    NgxSpinnerModule,
   ],
   providers: [
     CookieService,

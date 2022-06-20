@@ -1,0 +1,59 @@
+<nb-card size="medium">
+  <nb-card-body>
+    <form class="row">
+      <div class="mb-3 col-12 col-md-6">
+        <label class="form-label" for="fname">Product name</label>
+        <input
+          type="text"
+          id="fname"
+          fullWidth
+          nbInput
+          class="form-control"
+          placeholder="Product Name"
+          required
+        />
+      </div>
+      <div class="mb-3 col-12 col-md-6">
+        <label class="form-label" for="lname">Product price</label>
+        <input
+          type="number"
+          fullWidth
+          id="lname"
+          nbInput
+          class="form-control"
+          placeholder="Product price"
+          required
+        />
+      </div>
+      <div class="mb-3 col-12 col-md-12">
+        <label class="form-label" for="lname">Product category</label>
+        <nb-select multiple placeholder="Category" fullWidth>
+          <nb-option value="1">Option 1</nb-option>
+          <nb-option value="2">Option 2</nb-option>
+          <nb-option value="3">Option 3</nb-option>
+          <nb-option value="4">Option 4</nb-option>
+        </nb-select>
+      </div>
+
+      <div class="mb-3 col-12 col-md-12">
+        <label class="form-label" for="address1">Tags</label>
+        <nb-tag-list (tagRemove)="onTagRemove($event)">
+          <nb-tag *ngFor="let tree of trees" [text]="tree" removable></nb-tag>
+          <input type="text" nbTagInput (tagAdd)="onTagAdd($event)" fullWidth />
+        </nb-tag-list>
+      </div>
+      <div class="mb-3 col-12 col-md-12">
+        <label class="form-label" for="address2"
+          >Address Line 2 (Optional)</label
+        >
+        <input
+          type="text"
+          id="address2"
+          class="form-control"
+          placeholder="Address"
+          required
+        />
+      </div>
+    </form>
+  </nb-card-body>
+</nb-card>

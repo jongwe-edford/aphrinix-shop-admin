@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthenticationRoutingModule } from './modules/authentication/authentication-routing.module';
 import { DashboardRoutingModule } from './modules/dashboard/dashboard-routing.module';
 import { HomeRoutingModule } from './modules/home/home-routing.module';
+import { ShopRoutingModule } from './modules/shop/shop-routing.module';
 
 const routes: Routes = [
   {
@@ -16,6 +17,17 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => DashboardRoutingModule,
+  },
+  {
+    path: 'shop',
+    loadChildren: () => ShopRoutingModule,
+  },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('./modules/dashboard/products/products.module').then(
+        (m) => m.ProductsModule
+      ),
   },
 ];
 

@@ -24,8 +24,10 @@ export class AuthTokenService {
     ).toString();
     if (this.cookieService.check(AuthConstants.accessToken)) {
       this.cookieService.delete(AuthConstants.accessToken);
+      console.log('Access token deleted');
     }
     if (this.cookieService.check(AuthConstants.refreshToken)) {
+      console.log('Access token deleted');
       this.cookieService.delete(AuthConstants.refreshToken);
     }
     this.cookieService.set(AuthConstants.accessToken, encryptedAccessToken);
