@@ -1,9 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
+  productsApiUrl = environment.serverUrl + 'products/';
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  addNewProduct(data: FormData): Observable<any> {
+    return this.http.post(`${this.productsApiUrl}create`, data, {});
+  }
 }

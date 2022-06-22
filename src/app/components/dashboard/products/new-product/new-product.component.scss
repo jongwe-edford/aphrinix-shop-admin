@@ -1,0 +1,15 @@
+.preview {
+  width: 160px;
+  height: 200;
+  margin: 10px 15px;
+  object-fit: cover;
+  @media screen and(max-width:900px) {
+    width: 120px;
+    height: 160px;
+  }
+}
+
+.previews {
+  display: flex;
+  flex-wrap: wrap;
+}

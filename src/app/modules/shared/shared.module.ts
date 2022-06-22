@@ -4,6 +4,7 @@ import {
   NbBadgeModule,
   NbButtonModule,
   NbCardModule,
+  NbCheckboxModule,
   NbContextMenuModule,
   NbDialogModule,
   NbFormFieldModule,
@@ -25,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NotifierModule } from 'angular-notifier';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { NgpImagePickerModule } from 'ngp-image-picker';
 
 @NgModule({
   declarations: [],
@@ -63,6 +65,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     NbSelectModule,
     NbTagModule,
     AngularEditorModule,
+    NbCheckboxModule,
+    NgpImagePickerModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -87,6 +91,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     NbSelectModule,
     NbTagModule,
     AngularEditorModule,
+    NbCheckboxModule,
+    NgpImagePickerModule,
   ],
 })
 export class SharedModule {}
